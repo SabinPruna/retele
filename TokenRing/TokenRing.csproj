@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{474584D2-4DDD-456B-9783-82535D13B1AA}</ProjectGuid>
+    <ProjectGuid>{4D4246A8-E5E5-4444-83D1-6B0F5C26FC61}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Retele</RootNamespace>
-    <AssemblyName>Retele</AssemblyName>
+    <RootNamespace>TokenRing</RootNamespace>
+    <AssemblyName>TokenRing</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Network\Computer.cs" />
+    <Compile Include="Network\Token.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

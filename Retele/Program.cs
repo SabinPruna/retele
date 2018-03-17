@@ -1,15 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Retele
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
+namespace Retele {
+    public class Program {
+        public static void Main() {
+            ParityChecker source = new ParityChecker();
+            source.Encode();
+            source.Corrupt();
+
+            ParityChecker target = new ParityChecker(source.Array, source.ParityLine, source.ParityColumn);
+            target.ScanForErrors();
+
+            Console.ReadKey();
         }
     }
 }

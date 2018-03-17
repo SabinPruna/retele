@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Retele", "Retele\Retele.csproj", "{474584D2-4DDD-456B-9783-82535D13B1AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BPB", "Retele\BPB.csproj", "{474584D2-4DDD-456B-9783-82535D13B1AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokenRing", "TokenRing\TokenRing.csproj", "{4D4246A8-E5E5-4444-83D1-6B0F5C26FC61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRC", "CRC\CRC.csproj", "{1B3C4D28-76EC-4059-BDE2-8EACF6BF0D23}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{474584D2-4DDD-456B-9783-82535D13B1AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{474584D2-4DDD-456B-9783-82535D13B1AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{474584D2-4DDD-456B-9783-82535D13B1AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D4246A8-E5E5-4444-83D1-6B0F5C26FC61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D4246A8-E5E5-4444-83D1-6B0F5C26FC61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D4246A8-E5E5-4444-83D1-6B0F5C26FC61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D4246A8-E5E5-4444-83D1-6B0F5C26FC61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B3C4D28-76EC-4059-BDE2-8EACF6BF0D23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B3C4D28-76EC-4059-BDE2-8EACF6BF0D23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B3C4D28-76EC-4059-BDE2-8EACF6BF0D23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B3C4D28-76EC-4059-BDE2-8EACF6BF0D23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
