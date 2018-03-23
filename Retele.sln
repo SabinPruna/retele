@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokenRing", "TokenRing\Toke
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRC", "CRC\CRC.csproj", "{1B3C4D28-76EC-4059-BDE2-8EACF6BF0D23}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tema3", "Tema3\Tema3.csproj", "{CA5A2FED-DD54-4271-A471-EF6A62DEB631}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1B3C4D28-76EC-4059-BDE2-8EACF6BF0D23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B3C4D28-76EC-4059-BDE2-8EACF6BF0D23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B3C4D28-76EC-4059-BDE2-8EACF6BF0D23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA5A2FED-DD54-4271-A471-EF6A62DEB631}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA5A2FED-DD54-4271-A471-EF6A62DEB631}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA5A2FED-DD54-4271-A471-EF6A62DEB631}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA5A2FED-DD54-4271-A471-EF6A62DEB631}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
