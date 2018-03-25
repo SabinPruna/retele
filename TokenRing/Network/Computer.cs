@@ -22,24 +22,35 @@ namespace TokenRing.Network {
         }
 
         public bool CopyIfDestination(Token token) {
-            if (token.DestinationIP == IP) {
-                token.IsDestinationReached = true;
-                Buffer += ";" + token.Message;
-                token.IsAvailable = true;
+            lock (token) {
+                if (token.DestinationIP == IP) {
+                    token.IsDestinationReached = true;
 
-                return true;
+                    Buffer += Buffer == string.Empty ? token.Message : ";" + token.Message;
+                    token.IsAvailable = true;
+
+                    return true;
+                }
+
+                return false;
             }
-
-            return false;
         }
 
         public void LoadToken(Token token, IList<string> computersList) {
-            token.Message = $"This is message {_messageCounter++}";
-            token.IsDestinationReached = false;
-            token.IsAvailable = false;
-            token.SourceIP = IP;
-            token.DestinationIP = computersList.Where(i => i != IP).ToList().OrderBy(d => new Random().Next())
-                                               .FirstOrDefault();
+            lock (token) {
+                //Monitor.Wait(token);
+
+                token.Message = $"This is message {_messageCounter++}";
+                token.IsDestinationReached = false;
+                token.IsAvailable = false;
+                token.SourceIP = IP;
+                token.DestinationIP = computersList.Where(i => i != IP).ToList()
+                                                   .OrderBy(d => new Random(Guid.NewGuid().GetHashCode()).Next())
+                                                   .First();
+
+
+                //Monitor.PulseAll(token);
+            }
         }
     }
 }
