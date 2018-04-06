@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRC", "CRC\CRC.csproj", "{1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tema3", "Tema3\Tema3.csproj", "{CA5A2FED-DD54-4271-A471-EF6A62DEB631}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlidingWindow", "..\..\..\Desktop\Tema4\Tema4\SlidingWindow.csproj", "{BDD95629-AF8B-4AFD-B411-34FE47B54956}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlidingWindow", "Tema4\Tema4\SlidingWindow.csproj", "{BDD95629-AF8B-4AFD-B411-34FE47B54956}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
