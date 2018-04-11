@@ -20,7 +20,7 @@
         }
 
         public override string ToString() {
-            return $"ACK:{ACK}, SYN:{SYN}, FIN:{FIN}, x:{X}, f:{F}, Message:{Message}";
+            return $"[ACK:{ACK}, SYN:{SYN}, FIN:{FIN}, x:{X}, f:{F}, Message:{Message}]";
         }
     }
 }

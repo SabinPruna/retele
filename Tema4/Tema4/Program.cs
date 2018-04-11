@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 
 namespace SlidingWindow {
     public class Program {
@@ -8,14 +9,17 @@ namespace SlidingWindow {
             Package package = new Package();
 
             while (package.FIN == 0) {
-                Thread sourceThread = new Thread(() => source.Run(package));
+                Thread sourceThread = new Thread(() => source.SendPackage(package));
                 sourceThread.Start();
                 sourceThread.Join();
 
-                Thread destinationThread = new Thread(() => destination.Run(package));
+                Thread destinationThread = new Thread(() => destination.ReceivePackage(package));
                 destinationThread.Start();
                 destinationThread.Join();
             }
+
+            Console.WriteLine($"The message sent: {source.MessageToSend}");
+            Console.WriteLine($"The message received: {destination.MessageToReceive}");
         }
     }
 }

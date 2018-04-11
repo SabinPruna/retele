@@ -1,45 +1,59 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 
 namespace SlidingWindow {
     public class Source {
-        public string Buffer { get; set; } = string.Empty;
+        public string MessageToSend { get; set; } = File.ReadAllLines(@"E:\SlidingWindow.txt").First();
 
-        public void Run(Package package) {
+        public void SendPackage(Package package) {
             lock (package) {
-                if (package.ACK == 0) {
-                    package.ACK = 1;
-                    Buffer = GenerateMessage();
-                }
-                else if (Buffer.Length == 0) {
-                    package.FIN = 1;
-                }
-                else if (package.SYN == 1) {
-                    if (Buffer.Length > package.F) {
-                        package.Message = Buffer.Substring(0, package.F);
-                        Buffer = Buffer.Substring(package.F);
-                        package.X = package.X + package.F - 1;
+                if (IsDestinationAbleToReceive(package)) {
+                    if (IsFirstPackage(package)) {
+                        SetFirstMessage(package);
                     }
                     else {
-                        package.Message = Buffer;
-                        package.X = package.X + Buffer.Length - 1;
-                        Buffer = string.Empty;
+                        if (IsPackageReceived(package))
+                        {
+                            package.Message = package.X + package.F > MessageToSend.Length
+                                                  ? MessageToSend.Substring(package.X)
+                                                  : MessageToSend.Substring(package.X, package.F);
+                        }
                     }
-                }
 
-                Console.WriteLine("Source: " + package);
+                    if (package.X + package.F > MessageToSend.Length) {
+                        package.FIN = 1;
+                    }
+
+                    Console.WriteLine("Source sent the following package: " + package);
+                }
             }
         }
 
-        /// <summary>
-        ///     Generates the message.
-        /// </summary>
-        /// <returns></returns>
-        private string GenerateMessage() {
-            Random random = new Random();
-            string[] words = File.ReadAllLines(@"E:\SlidingWindow.txt");
+        private static bool IsDestinationAbleToReceive(Package package) {
+            return package.F != 0;
+        }
 
-            return words[random.Next(words.Length)];
+        private static bool IsFirstPackage(Package package) {
+            return package.F == -1;
+        }
+
+        private static void SetFirstMessage(Package package) {
+            package.X = 0;
+            package.ACK = 1;
+            package.SYN = 0;
+            package.Message = string.Empty;
+        }
+
+        /// <summary>
+        ///     Determines whether [is package resent] [the specified package].
+        /// </summary>
+        /// <param name="package">The package.</param>
+        /// <returns>
+        ///     <c>true</c> if [is package resent] [the specified package]; otherwise, <c>false</c>.
+        /// </returns>
+        private static bool IsPackageReceived(Package package) {
+            return package.ACK == 1 && package.SYN == 1;
         }
     }
 }

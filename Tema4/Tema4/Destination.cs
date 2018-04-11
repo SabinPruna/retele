@@ -5,39 +5,32 @@ namespace SlidingWindow {
     public class Destination {
         public string Buffer { get; set; } = string.Empty;
 
-        public void Run(Package package) {
+        public string MessageToReceive{ get; set; } = string.Empty;
+
+        public void ReceivePackage(Package package) {
             lock (package) {
-                package.F = GenerateF();
+                Console.WriteLine($"Destination received the following package: {package}");
 
-                while (package.F == 0) {
-                    Thread.Sleep(3000);
-                    package.F = GenerateF();
-                }
+                MessageToReceive += package.Message;
 
-                if (package.ACK == 1 && package.SYN == 0) {
-                    package.SYN = 1;
-                    package.X = 1;
-                }
-                else {
-                    if (package.ACK == 1 && package.SYN == 1 && package.FIN == 1) {
-                        Console.WriteLine($"Message: {Buffer}");
-                    }
-                    else {
-                        if (package.ACK == 1 && package.SYN == 1) {
-                            Buffer = Buffer + package.Message;
-                            Console.WriteLine($"Destination: {package.Message}");
-                            package.X = package.X + 1;
-                        }
-                    }
-                }
+                UpdatePackageInfo(package);
 
-                Console.WriteLine("Destination: " + package);
             }
         }
 
+        private static void UpdatePackageInfo(Package package) {
+            if (package.F >= 0) {
+                package.X += package.F;
+            }
+            package.F = GenerateF();
+            package.ACK = 1;
+            package.SYN = 1;
+            package.Message = string.Empty;
+        }
+
         private static int GenerateF() {
-            Random rand = new Random();
-            return rand.Next(20);
+            Random rand = new Random(Guid.NewGuid().GetHashCode());
+            return rand.Next(5);
         }
     }
 }
