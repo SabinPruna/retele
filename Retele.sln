@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tema3", "Tema3\Tema3.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlidingWindow", "Tema4\Tema4\SlidingWindow.csproj", "{BDD95629-AF8B-4AFD-B411-34FE47B54956}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranspositionClient", "TranspositionClient\TranspositionClient.csproj", "{4DB4A9C7-E8DE-4B1C-A17D-CC7D25733E12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportationServer", "TransportationServer\TransportationServer.csproj", "{8D7DF31D-4F5F-448B-88B5-829FC97944E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{BDD95629-AF8B-4AFD-B411-34FE47B54956}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDD95629-AF8B-4AFD-B411-34FE47B54956}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDD95629-AF8B-4AFD-B411-34FE47B54956}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DB4A9C7-E8DE-4B1C-A17D-CC7D25733E12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DB4A9C7-E8DE-4B1C-A17D-CC7D25733E12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DB4A9C7-E8DE-4B1C-A17D-CC7D25733E12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DB4A9C7-E8DE-4B1C-A17D-CC7D25733E12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D7DF31D-4F5F-448B-88B5-829FC97944E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D7DF31D-4F5F-448B-88B5-829FC97944E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D7DF31D-4F5F-448B-88B5-829FC97944E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D7DF31D-4F5F-448B-88B5-829FC97944E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
